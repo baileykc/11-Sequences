@@ -678,7 +678,7 @@ def sum_first_n(numbers, n):
       :type n: int
     """
     # -------------------------------------------------------------------------
-    # TODO: 9. Implement and test this function.
+    # Done: 9. Implement and test this function.
     #          Tests have been written for you (above).
     #
     # RESTRICTION:
@@ -689,9 +689,8 @@ def sum_first_n(numbers, n):
     # -------------------------------------------------------------------------
 
     total = 0
-    for k in range(len(numbers)):
-        if n <= len(numbers[k]):
-            total = total + 1
+    for k in range(n):
+        total = numbers[k] + total
 
     return total
 
