@@ -557,12 +557,12 @@ def count_positive_sines(numbers):
       :type sequence: list or tuple (of numbers)
     """
     # -------------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # Done: 7. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
     total = 0
     for k in range(len(numbers)):
-        if numbers[k] % 2 == 0:
+        if math.sin(numbers[k]) > 0:
             total = total + 1
     return total
 
@@ -570,7 +570,7 @@ def count_positive_sines(numbers):
 def run_test_sum_first_n():
     """ Tests the   sum_first_n   function. """
     # -------------------------------------------------------------------------
-    # TODO: 8. Implement this TEST function.
+    # Done: 8. Implement this TEST function.
     #   It TESTS the  sum_first_n  function defined below.
     #   Include at least ** 2 ** ADDITIONAL tests.
     #
@@ -641,6 +641,20 @@ def run_test_sum_first_n():
 
     # TO DO 8 (continued):  Add your 2 ADDITIONAL tests here:
 
+    # Test 8:
+    expected = 0
+    actual = sum_first_n([70, -30, 60, 5], 0)
+    print()
+    print('Test 8 expected:', expected)
+    print('       actual:  ', actual)
+
+    # Test 9:
+    expected = 0
+    actual = sum_first_n([1, -3, 98, 1], 0)
+    print()
+    print('Test 9 expected:', expected)
+    print('       actual:  ', actual)
+
 
 def sum_first_n(numbers, n):
     """
@@ -673,6 +687,12 @@ def sum_first_n(numbers, n):
     #      -- The TESTING code above does use   built_ins.sum
     #         as an ORACLE in TESTING this function, however.
     # -------------------------------------------------------------------------
+
+    total = 0
+    for k in range(len(numbers)):
+        if n <= len(numbers[k]):
+            total = total + 1
+    return n
 
 
 # -----------------------------------------------------------------------------
